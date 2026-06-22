@@ -6,11 +6,15 @@ Provides two approaches:
 """
 
 # from .nodes import NODE_CLASS_MAPPINGS as _MASK, NODE_DISPLAY_NAME_MAPPINGS as _DISPLAY_MASK
-from .nodes_llm_mask import NODE_CLASS_MAPPINGS as _LLM, NODE_DISPLAY_NAME_MAPPINGS as _DISPLAY_LLM
+"""
+Artist Mask Attn — Mask-based multi-artist mixing + quantitative analysis for Anima.
 
-# NODE_CLASS_MAPPINGS = {**_MASK, **_LLM}
-NODE_CLASS_MAPPINGS = {**_LLM}
-# NODE_DISPLAY_NAME_MAPPINGS = {**_DISPLAY_MASK, **_DISPLAY_LLM}
-NODE_DISPLAY_NAME_MAPPINGS = {**_DISPLAY_LLM}
+Modules:
+  nodes/llm_mask.py — LLM-level attention mask (patches Qwen3 self-attention)
+  nodes/entropy.py — Cross-attention entropy analysis
+  utils/          — Shared utilities (artist parsing, tokenizer, attention)
+"""
+
+from .nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]
